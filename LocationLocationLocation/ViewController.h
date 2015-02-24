@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate>
+- (IBAction)tapDirections:(id)sender;
+- (IBAction)tapSettings:(UIBarButtonItem *)sender;
+- (IBAction)tapBeacon:(UIBarButtonItem *)sender;
 
+/// Map Buttons
+- (IBAction)tapShowLocation:(UIBarButtonItem *)sender;
+- (IBAction)tapGoToDisney:(UIBarButtonItem *)sender;
+- (IBAction)tapDropPins:(UIBarButtonItem *)sender;
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 

@@ -14,6 +14,9 @@
 		378BBCE61A9AACC9009D9CD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 378BBCE51A9AACC9009D9CD1 /* Images.xcassets */; };
 		378BBCE91A9AACC9009D9CD1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378BBCE71A9AACC9009D9CD1 /* LaunchScreen.xib */; };
 		378BBCF51A9AACC9009D9CD1 /* LocationLocationLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBCF41A9AACC9009D9CD1 /* LocationLocationLocationTests.m */; };
+		378BBCFF1A9AAD1E009D9CD1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378BBCFE1A9AAD1E009D9CD1 /* MapKit.framework */; };
+		378BBD011A9AB125009D9CD1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378BBD001A9AB125009D9CD1 /* CoreLocation.framework */; };
+		378BBD041A9BC0CD009D9CD1 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BBD031A9BC0CD009D9CD1 /* MyLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		378BBCEE1A9AACC9009D9CD1 /* LocationLocationLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationLocationLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		378BBCF31A9AACC9009D9CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		378BBCF41A9AACC9009D9CD1 /* LocationLocationLocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationLocationLocationTests.m; sourceTree = "<group>"; };
+		378BBCFE1A9AAD1E009D9CD1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		378BBD001A9AB125009D9CD1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		378BBD021A9BC0CD009D9CD1 /* MyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocation.h; sourceTree = "<group>"; };
+		378BBD031A9BC0CD009D9CD1 /* MyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378BBD011A9AB125009D9CD1 /* CoreLocation.framework in Frameworks */,
+				378BBCFF1A9AAD1E009D9CD1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,8 @@
 		378BBCCC1A9AACC9009D9CD1 = {
 			isa = PBXGroup;
 			children = (
+				378BBD001A9AB125009D9CD1 /* CoreLocation.framework */,
+				378BBCFE1A9AAD1E009D9CD1 /* MapKit.framework */,
 				378BBCD71A9AACC9009D9CD1 /* LocationLocationLocation */,
 				378BBCF11A9AACC9009D9CD1 /* LocationLocationLocationTests */,
 				378BBCD61A9AACC9009D9CD1 /* Products */,
@@ -85,6 +96,8 @@
 				378BBCDD1A9AACC9009D9CD1 /* AppDelegate.m */,
 				378BBCDF1A9AACC9009D9CD1 /* ViewController.h */,
 				378BBCE01A9AACC9009D9CD1 /* ViewController.m */,
+				378BBD021A9BC0CD009D9CD1 /* MyLocation.h */,
+				378BBD031A9BC0CD009D9CD1 /* MyLocation.m */,
 				378BBCE21A9AACC9009D9CD1 /* Main.storyboard */,
 				378BBCE51A9AACC9009D9CD1 /* Images.xcassets */,
 				378BBCE71A9AACC9009D9CD1 /* LaunchScreen.xib */,
@@ -168,6 +181,14 @@
 				TargetAttributes = {
 					378BBCD41A9AACC9009D9CD1 = {
 						CreatedOnToolsVersion = 6.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					378BBCED1A9AACC9009D9CD1 = {
 						CreatedOnToolsVersion = 6.3;
@@ -221,6 +242,7 @@
 			files = (
 				378BBCE11A9AACC9009D9CD1 /* ViewController.m in Sources */,
 				378BBCDE1A9AACC9009D9CD1 /* AppDelegate.m in Sources */,
+				378BBD041A9BC0CD009D9CD1 /* MyLocation.m in Sources */,
 				378BBCDB1A9AACC9009D9CD1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationLocationLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationLocationLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
